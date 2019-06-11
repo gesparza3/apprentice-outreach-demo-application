@@ -12,7 +12,6 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 script:
   - export REACT_APP_DOMAIN=backend-demo-app
-  - docker-compose build
   - docker-compose up -d
   - docker ps
-  - docker-compose exec frontend-demo-app sh -c "npm test"
+  - docker-compose exec frontend sh -c "npm test"
