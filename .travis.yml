@@ -15,4 +15,4 @@ script:
   - docker-compose build
   - docker-compose up -d
   - docker ps
-  - docker-compose exec frontend sh -c "npm test"
+  - docker-compose exec frontend-demo-app sh -c "npm test"
