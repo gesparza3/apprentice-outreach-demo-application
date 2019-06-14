@@ -1,10 +1,11 @@
-FROM node:8
+FROM node:12.2.0-alpine
 
 # Prepare app directory
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app/
-ADD . /usr/src/app/
+COPY package*.json ./
+
+# Copy source code
+COPY . .
 
 # Start service
-EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]
